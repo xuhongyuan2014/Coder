@@ -19,15 +19,37 @@ program.operateStr();
 	}
 
 	public void operateStr(){
-		for(int i=0;i<str.length();i++){
+/*		for(int i=0;i<str.length();i++){
 			if(isNum(str.charAt(i))){//第i位是数字
 				if(i==0)result=result+"*"+str.charAt(i);
 				if(i==str.length()-1)result=result+str.charAt(i)+"*";
 				if(result.length()>=1&&!isNum(result.charAt(result.length()-1)))result=result+"*"+str.charAt(i);
 			}
+			else{
+				if(result.length()>=1&&isNum(result.charAt(result.length()-1)))result=result+"*";	
+				result=result+str.charAt(i);	
+			}
 			
+		}*/
+		
+		String re = "";
+		boolean pre = false;
+		for(int i = 0; i < str.length(); i++){
+			char c = str.charAt(i);
+			
+			if(isNum(c)){
+				if(!pre) re += "*";
+				pre = true;
+			}else{
+				if(pre) re += "*";
+				pre = false;
+			}
+			
+			re += c;
 		}
-		System.out.println(result);	
+		
+		if(pre) re += "*";
+		System.out.println(re);	
 		
 	}
 	public boolean isNum(char c){
