@@ -25,7 +25,6 @@ while((str=scan.nextLine())!=null)
 for(int i=0;i<list.size();i++){
 	System.out.println(program.replace("marshtomp","fjxmlhx",list.get(i)));	
 }
-
 	}
 
 	
@@ -36,7 +35,7 @@ for(int i=0;i<list.size();i++){
 		String str="";
 		while(start<=whole.length()-1){//target字符串从左向右移动，直到start指针到达whole字符串的结尾
 			for(int i=0;i<=target.length()-1;i++){//待替换的target和整个字符串whole进行匹配
-				if(whole.charAt(start+i)!=target.charAt(i)){//如果当前位置不匹配则跳出循环，如果匹配则进行下一个匹配
+				if(!isEqual(whole.charAt(start+i),target.charAt(i))){//如果当前位置不匹配则跳出循环，如果匹配则进行下一个匹配
 					break;
 				}	
 				if(i==target.length()-1&&isEqual(whole.charAt(start+i),target.charAt(i))){	//如果当前位置匹配，而且匹配进行到了字符串的结尾，则判定全部匹配。设置替换标志。
@@ -60,9 +59,7 @@ for(int i=0;i<list.size();i++){
 		
 	}
 	public boolean isEqual(char a,char b){
-		if(a>b&&(b+32)==a){return true;}
-	    if(a<b&&(a+32)==b){return true;}
-		if(a==b){return true;}
+        if(a==b||(int)Math.abs(a-b)==32)return true;
 	    return false;
 	}
 }
