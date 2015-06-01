@@ -26,19 +26,19 @@ public class Main {
 		   else if(totalStr.charAt(i)>='A'&&totalStr.charAt(i)<='Z'){//注意:Z和z之间有六个其他字符,9和A之间也有七个其他字符
 			   total[totalStr.charAt(i)-'A'+10]++;
 		   }
-		   else if(totalStr.charAt(i)>='a'&&totalStr.charAt(i)<='z'){
-			   total[totalStr.charAt(i)-'a'+10]++;
+		   else if(totalStr.charAt(i)>='a'&&totalStr.charAt(i)<='z'){//注意加36
+			   total[totalStr.charAt(i)-'a'+36]++;
 		   }
 	   }
 	   for(int i=0;i<targetStr.length();i++){//初始化字符统计情况得到目标字符串的各个元素个数
 		   if(targetStr.charAt(i)>='0'&&targetStr.charAt(i)<='9'){
 			   target[targetStr.charAt(i)-'0']++;
 		   }
-		   else if(targetStr.charAt(i)>='A'&&targetStr.charAt(i)<='Z'){
+		   else if(targetStr.charAt(i)>='A'&&targetStr.charAt(i)<='Z'){//注意加10
 			   target[targetStr.charAt(i)-'A'+10]++;
 		   }
-		   else if(targetStr.charAt(i)>='a'&&targetStr.charAt(i)<='z'){
-			   target[targetStr.charAt(i)-'a'+10]++;
+		   else if(targetStr.charAt(i)>='a'&&targetStr.charAt(i)<='z'){//注意加36
+			   target[targetStr.charAt(i)-'a'+36]++;
 		   }	   	   
 	   }
 	   int left=0;
