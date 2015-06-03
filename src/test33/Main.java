@@ -9,6 +9,12 @@ import java.util.Scanner;
 _hs_s_a_es
 
 7TI
+
+测试用例：
+faengebhe4brhbrrkbhakbnrkbhrbhrkbhr
+fng4n
+
+ABEHKR
 */
 public class Main {
 
@@ -18,9 +24,9 @@ public class Main {
 		Scanner scan=new Scanner(System.in);
 		String supposed=scan.nextLine();
 		String sured=scan.nextLine();
-		System.out.println(getWornOutKey(supposed,sured));
+		System.out.println(getWornOutKeyInOrder(supposed,sured));
 	}
-	public static String getWornOutKey(String supposed,String sured) {
+	public static String getWornOutKey(String supposed,String sured) {//利用数组与数字和字母、空格对应，返回的结果是无序的字符串
 		int [] arrSupposed=new int[37];
 		int [] arrSured=new int[37];
 		StringBuilder result=new StringBuilder();
@@ -68,5 +74,20 @@ public class Main {
 		}
 		return result.toString();
 	}
-  
+	public static String getWornOutKeyInOrder(String supposed,String sured){//有序获取,通过stringbuilder
+		StringBuilder str=new StringBuilder();
+		for(int i=0;i<supposed.length();i++){
+			String temp=Character.toUpperCase(supposed.charAt(i))+"";
+			if(str.indexOf(temp)==-1){
+				str.append(temp);
+			}
+		}
+		for(int i=0;i<sured.length();i++){
+			String temp=Character.toUpperCase(sured.charAt(i))+"";
+			if(str.indexOf(temp)>=0){
+				str.deleteCharAt(str.indexOf(temp));
+			}
+		}
+		return str.toString();
+	}
 }
