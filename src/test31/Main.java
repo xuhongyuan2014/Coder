@@ -3,7 +3,16 @@ package test31;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+/*
+ * 
+ * 输入例子:
+10
+60 75 90 55 75 99 82 90 75 50
+3 75 90 88
 
+输出例子:
+3 2 0
+ * */
 public class Main {
 
 
@@ -12,10 +21,10 @@ public class Main {
 		Scanner scan=new Scanner(System.in);
 		int num=scan.nextInt();
 		int [] numbers=new int[num];	
-		scan.nextLine();
-		String [] numbersStr=scan.nextLine().split(" ");
+/*		scan.nextLine();
+		String [] numbersStr=scan.nextLine().split(" ");*/
 		for(int i=0;i<num;i++){
-			numbers[i]=Integer.valueOf(numbersStr[i]);
+			numbers[i]=scan.nextInt();
 		}
 		int searchCount=scan.nextInt();
 		int [] searchNum=new int[searchCount];
