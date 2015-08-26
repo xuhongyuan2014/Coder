@@ -15,7 +15,8 @@ public static String operate(String str){
 		str=str.substring(2, str.length());
 		for(int i=0;i<str.length();i++){
 			char temp=str.charAt(str.length()-1-i);
-			result=(int) (result+Math.pow(parse(temp),i+1));
+			result=(int) (result+parse(temp)*Math.pow(16,i));
+			//System.out.println(result);
 		}
 	}
 	return String.valueOf(result);
