@@ -6,6 +6,14 @@ public class Main {
 		// TODO Auto-generated method stub
 		int [] n={1,2,3,4,5,6,7,8,9};
 		Print(n);
+		
+		/*测试，自定义toBinary函数*/
+		int [] result=toBinary((int) Math.pow(2,n.length)-1);
+		for(int i=0;i<result.length;i++){
+			System.out.print(result[i]);
+		}
+		
+		
 	}
 public static void Print(int [] n){
 	int num=(int) Math.pow(2,n.length);
@@ -22,5 +30,13 @@ public static void Print(int [] n){
 		}
 		System.out.println(result);
 	}
+}
+public static int [] toBinary(int n){//自定义二进制转换函数
+	int [] str=new int[9];
+	for(int i=8;i>=0;i--){
+		str[i]=(n&0x1);
+		n=n>>1;
+	}
+	return str;
 }
 }
