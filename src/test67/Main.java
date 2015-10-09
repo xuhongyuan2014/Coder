@@ -6,18 +6,19 @@ import java.util.List;
 
 /*È«ÅÅÁÐ---------------µÝ¹é*/
 public class Main {
-
+	public static int flag=0;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String [] data={"a","b","c","d"};
-		Sort(Arrays.asList(data),new ArrayList(),4);
+		String [] data={"a","b","c"};
+		Sort(Arrays.asList(data),new ArrayList(),3);
 	}
 	public static void Sort(List data,List target,int num){
 		if(target.size()==num){
 			for(Object obj :target){
 				System.out.print(obj);
 			}
-			System.out.println();
+			flag++;
+			System.out.println(flag);
 		}
 		for(int i=0;i<data.size();i++){
 			List newData=new ArrayList(data);
