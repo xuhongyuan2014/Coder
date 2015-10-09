@@ -13,6 +13,7 @@ public class Main {
 		String  b=scan.nextLine();
 		System.out.println(Arrays.toString(partMathNum(a)));
 		System.out.println(valid(a,b));
+		System.out.println(Arrays.toString(partMathNum("abcdabdab")));
 		
 
 	}
@@ -65,7 +66,7 @@ public class Main {
 					n[i]=n[i-1]+1;	
 				}
 				else {
-					map.clear();
+					//map.clear();
 					temp.delete(0, temp.length());
 				}
 
