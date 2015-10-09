@@ -1,5 +1,5 @@
 package test63;
-/*取所有的组合*/
+/*取所有的组合{全排列VS所有子串VS所有集合}*/
 public class Main {
 
 	public static void main(String[] args) {
